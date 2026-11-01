@@ -3,7 +3,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 import pytesseract
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+
 import os
 
 # On Windows, find the Tesseract program automatically if installed normally.
