@@ -1,0 +1,17 @@
+EDUBOARD AI - WINDOWS QUICK START
+
+1. Extract this ZIP fully (do not run from inside the ZIP).
+2. Install Python 3.11 or 3.12 and Windows Tesseract OCR.
+3. Open EduBoard_AI_Complete in VS Code.
+4. In the VS Code terminal run:
+   py -3.11 -m venv venv
+   .\venv\Scripts\python.exe -m pip install -r requirements.txt
+   .\venv\Scripts\python.exe analyze_dataset.py
+5. If Tesseract is not found, set its path in pipeline.py (see README).
+6. Website: cd web
+   ..\venv\Scripts\python.exe manage.py runserver
+7. Open http://127.0.0.1:8000/
+8. Notebook: open EduBoard_AI_FOML.ipynb in VS Code and select venv kernel.
+
+NOTE: All 57 photographs are included in sample_images. Batch OCR can be slow.
+Django must be tested on your laptop; it could not be installed in the creation environment.

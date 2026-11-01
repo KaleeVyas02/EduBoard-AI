@@ -1,0 +1,34 @@
+EDUBOARD AI - VALIDATION STATUS (15 OCT 2026)
+
+VERIFIED HERE:
+- All 57 supplied classroom photos were successfully opened.
+- quick_dataset_check.py ran across all 57 and wrote results/quality_all_57.csv.
+- pipeline.py processed a sample photo and saved original, corrected, enhanced, and notes outputs.
+- All Python files pass syntax compilation.
+
+NOT VERIFIED HERE:
+- Full 57-photo OCR run did not finish within execution time limit.
+- Django server cannot be run here because Django cannot be downloaded in this environment.
+- OCR accuracy requires manually transcribed reference text (not just character count).
+
+RUN ON WINDOWS (RECOMMENDED PYTHON 3.11 OR 3.12):
+1. Extract ZIP and open EduBoard_AI_Complete in VS Code.
+2. python -m venv venv
+3. .\venv\Scripts\python.exe -m pip install -r requirements.txt
+4. Install Tesseract for Windows from https://github.com/UB-Mannheim/tesseract/wiki
+   and add C:\Program Files\Tesseract-OCR to your Windows PATH.
+5. .\venv\Scripts\python.exe quick_dataset_check.py
+6. .\venv\Scripts\python.exe analyze_dataset.py
+7. cd web
+8. ..\venv\Scripts\python.exe manage.py check
+9. ..\venv\Scripts\python.exe manage.py runserver
+10. Open http://127.0.0.1:8000/
+
+If Tesseract is not on PATH, add after the imports in pipeline.py:
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
+NOTES:
+- Batch OCR can take time on CPU; results are saved in results/.
+- Tesseract is pretrained; no neural-network training is performed.
+- More OCR characters does not necessarily mean more accurate OCR.
+- This is a local classroom demo, not a production-hardened web service.

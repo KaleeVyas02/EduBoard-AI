@@ -1,0 +1,11 @@
+EDUBOARD AI - VERIFIED RESULTS (15 OCTOBER 2026)
+
+57 of 57 classroom photographs processed with no batch errors.
+55 of 57 produced nonempty OCR text in the fast batch setting.
+2 of 57 yielded no recognized text.
+Automatic four-corner board/screen detection returned true on 19/57 images; false means the original perspective was retained.
+OCR character count is NOT accuracy. No ground-truth transcription was supplied, so WER/CER cannot yet be computed honestly.
+The full 57-image batch uses one fast OCR pass per image (2-second timeout).
+The Django website uses the normal two-pass OCR pipeline and is coded but not browser-tested here because Django cannot be installed without network access.
+Images may contain personal/classroom information: the Django demo is localhost-only, not intended for public hosting.
+See results/summary.csv and results/<photo_name>/ for outputs.
